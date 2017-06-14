@@ -1,0 +1,14 @@
+<p>
+  <strong>Каталог:</strong>
+  <%= @group.title %>
+</p>
+ 
+<p>
+  <strong>Описание:</strong>
+  <%= @group.text %>
+</p>
+
+
+<%= link_to 'Продукты', group_products_path(@group) %>
+<!--<%= link_to 'Edit', edit_group_path(@group) %> |
+<%= link_to 'Back', groups_path %>-->
