@@ -1,5 +1,5 @@
 ActiveAdmin.register Product do
-  permit_params :name, :price, :pr_description, :group
+  permit_params :name, :price, :pr_description, :group, :product, :picture
 
   index do
     selectable_column
@@ -8,11 +8,15 @@ ActiveAdmin.register Product do
     column :price
     column :pr_description
     column :group
-    column :picture
+    column :picture do |ad|
+        image_tag ad.picture.url(:thumb)
+      end
     column :updated_at
     column :created_at
     actions
   end
+
+  
 
   filter :name
 

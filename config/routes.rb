@@ -7,7 +7,6 @@ Rails.application.routes.draw do
 
   resources :groups do
   	resources :products
-  	resources :pictures
   end
   
 

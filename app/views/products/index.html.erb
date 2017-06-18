@@ -1,9 +1,18 @@
+<h1>Список книг</h1>
+<table>
+  <tr>
+    <th>Название</th>
+    <th>Автор</th>
+    <th>Цена</th>
+    <th>Картинка</th>
+  </tr>
+
 <% @products.each do |product| %>
     <tr>
-      <td><%= product.price %></td>
       <td><%= product.name %></td>
       <td><%= product.pr_description %></td>
+      <td><%= product.price %></td>
       <td><%= image_tag product.picture.url(:medium) %></td>
     <tr>
-    
 <% end %>
+</table>

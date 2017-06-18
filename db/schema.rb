@@ -50,14 +50,6 @@ ActiveRecord::Schema.define(version: 20170613191329) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pictures", force: :cascade do |t|
-    t.string   "file"
-    t.integer  "picturable_id"
-    t.string   "picturable_type"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
-  end
-
   create_table "products", force: :cascade do |t|
     t.integer  "price"
     t.string   "name"
