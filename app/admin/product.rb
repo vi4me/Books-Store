@@ -1,5 +1,6 @@
 ActiveAdmin.register Product do
-  permit_params :name, :price, :pr_description, :group, :product, :picture
+  
+  permit_params :name, :price, :pr_description, :group, :picture
 
   index do
     selectable_column
@@ -30,5 +31,4 @@ ActiveAdmin.register Product do
     end
     f.actions
   end
-
 end
