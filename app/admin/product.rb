@@ -1,19 +1,20 @@
 ActiveAdmin.register Product do
-  
-  permit_params :name, :price, :pr_description, :group, :picture
+ 
+  permit_params :name, :price, :pr_description, :group, :group_id, :picture
 
   index do
     selectable_column
     id_column
-    column :name
-    column :price
-    column :pr_description
-    column :group
-    column :picture do |ad|
+    column "Товар", :name
+    column "Цена", :price
+    #column "Описание", :pr_description
+    column "Группа", :group
+    column "ID Группы", :group_id
+    column "Фото", :picture do |ad|
         image_tag ad.picture.url(:thumb)
       end
-    column :updated_at
-    column :created_at
+    #column "Обновлено", :updated_at
+    #column "Создано", :created_at
     actions
   end
 
@@ -27,8 +28,10 @@ ActiveAdmin.register Product do
       f.input :price
       f.input :pr_description
       f.input :group
+      f.input :group_id
       f.input :picture
     end
     f.actions
   end
+
 end

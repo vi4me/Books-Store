@@ -4,21 +4,21 @@ ActiveAdmin.register Group do
   index do
     selectable_column
     id_column
-    column :title
-    column :text
-    column :updated_at
-    column :created_at
+    column "Название", :title
+    column "Описание", :text
+    column "Обновлено", :updated_at
+    column "Создано", :created_at
     actions
   end
 
-  filter :name
+  filter :title
 
   form do |f|
     f.inputs "Group" do
       f.input :title
       f.input :text
-    end
+  end
     f.actions
   end
-
+ 
 end
