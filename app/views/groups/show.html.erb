@@ -8,5 +8,9 @@
   <%= @group.text %>
 </p>
 
+<p>
+  <strong>Фото:</strong>
+  <%= image_tag @group.picture.url(:medium) %>
+</p>
 
 <%= link_to 'Рюкзаки', group_products_path(@group) %>

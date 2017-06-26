@@ -18,31 +18,24 @@ class GroupsController < ApplicationController
  
   def create
     @group = Group.new(group_params)
-      if @group.save
-    redirect_to @group
-      else
-    render 'new'
-    end
+    @group.title = params[:group][:title]
+    @group.text = params[:group][:text]
+    @group.picture = params[:group][:picture]
+    @group.save
   end
 
   def update
     @group = Group.find(params[:id])
-      if @group.update(group_params)
-    redirect_to @group
-      else
-    render 'edit'
-    end
+    @group.update(group_params)
   end
 
   def destroy
   @group = Group.find(params[:id])
   @group.destroy
- 
-  redirect_to groups_path
 end
 
  private
   def group_params
-    params.require(:group).permit(:title, :text)
+    params.require(:group).permit(:title, :text, :picture)
   end
 end

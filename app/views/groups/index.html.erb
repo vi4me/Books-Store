@@ -5,13 +5,14 @@
   <tr>
     <th>Каталог</th>
     <th>Описание</th>
+    <th>Фото</th>
   </tr>
  
   <% @groups.each do |group| %>
     <tr>
-      <td><%= group.title %></td>
+      <td><%= link_to group.title, group_path(group) %></td>
       <td><%= group.text %></td>
-      <td><%= link_to 'Показать', group_path(group) %></td>
+      <td><%= image_tag group.picture.url(:medium) %></td>
     </tr>
   <% end %>
 </table>

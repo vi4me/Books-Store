@@ -1,11 +1,14 @@
 ActiveAdmin.register Group do
-  permit_params :title, :text
+  permit_params :title, :text, :picture
 
   index do
     selectable_column
     id_column
     column "Название", :title
     column "Описание", :text
+    column "Фото", :picture do |ad|
+        image_tag ad.picture.url(:thumb)
+    end
     column "Обновлено", :updated_at
     column "Создано", :created_at
     actions
@@ -17,6 +20,7 @@ ActiveAdmin.register Group do
     f.inputs "Group" do
       f.input :title
       f.input :text
+      f.input :picture
   end
     f.actions
   end
