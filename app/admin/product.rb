@@ -12,7 +12,7 @@ ActiveAdmin.register Product do
     column "ID Группы", :group_id
     column "Фото", :picture do |ad|
         image_tag ad.picture.url(:thumb)
-      end
+    end
     #column "Обновлено", :updated_at
     #column "Создано", :created_at
     actions
