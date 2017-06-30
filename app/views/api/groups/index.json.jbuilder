@@ -1,1 +1,1 @@
-json.array! @groups, partial: 'group', as: :group
+json.array! @groups.limit(2), partial: 'group', as: :group
