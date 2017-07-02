@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_group
 
   def index
+
     @products = @group.products
   end
 

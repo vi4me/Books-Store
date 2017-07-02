@@ -29,7 +29,7 @@ ActiveAdmin.register Product do
       f.input :pr_description
       f.input :group
       f.input :group_id
-      f.input :picture
+      
     end
     f.actions
   end

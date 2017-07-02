@@ -4,8 +4,7 @@ module Api
   	before_action :set_group
 
     def index
-      @products = Product.all.limit (2)
-      @products = @group.products
+      @products = @group.products.page(params[:page]).per(params[:per])
     end
 
     def show
